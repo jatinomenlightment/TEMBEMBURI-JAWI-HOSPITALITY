@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menepi Sejenak | Tembemburi Jawi</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: #111;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
+        opacity: 0;
+        transition: opacity 1.2s ease;
+    }
+
+    .screen.active {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .content {
+        background: rgba(0,0,0,0.45);
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 420px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 22px;
+        font-size: 15px;
+        border: none;
+        border-radius: 20px;
+        background: #c8a25a;
+        color: #000;
+        cursor: pointer;
+    }
+
+    button:hover {
+        opacity: 0.85;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- LAYAR 1 -->
+<div class="screen active" style="background-image:url('img1.jpg')">
+    <div class="content">
+        <h1>Jika hari ini terasa melelahkan…</h1>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 2 -->
+<div class="screen" style="background-image:url('img2.jpg')">
+    <div class="content">
+        <p>Mungkin bukan tubuhmu yang lelah,<br>melainkan pikiran yang terlalu penuh.</p>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 3 -->
+<div class="screen" style="background-image:url('img3.jpg')">
+    <div class="content">
+        <p>Kamu tidak harus pergi jauh.<br><br>
+        Kadang, cukup berhenti…<br><b>dan menepi sejenak.</b></p>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 4 -->
+<div class="screen" style="background-image:url('img4.jpg')">
+    <div class="content">
+        <p><b>Tembemburi Jawi Hospitality</b><br>
+        Jatinom<br><br>
+        Ruang singgah untuk hening,<br>lan eling.</p>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 5 -->
+<div class="screen" style="background-image:url('img5.jpg')">
+    <div class="content">
+        <p>Di sini, waktu berjalan lebih pelan.<br><br>
+        Tidak ada bising.<br>
+        Tidak ada tuntutan.<br><br>
+        Hanya ruang untuk bernapas.</p>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 6 -->
+<div class="screen" style="background-image:url('img6.jpg')">
+    <div class="content">
+        <p>
+        🍵 Menepi Pagi<br>
+        🌿 Menepi Sore<br>
+        🌙 Menepi Menginap<br>
+        🧺 Rasa Jawa
+        </p>
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 7 -->
+<div class="screen" style="background-image:url('img7.jpg')">
+    <div class="content">
+        <p>Tidak semua orang butuh liburan.<br><br>
+        Kadang, kita hanya perlu tempat<br>
+        <b>untuk menepi sejenak.</b></p>
+
+        <button onclick="next()">lanjut</button>
+    </div>
+</div>
+
+<!-- LAYAR 8 -->
+<div class="screen" style="background-image:url('img7.jpg')">
+    <div class="content">
+        <p>Tidak semua orang butuh liburan.<br><br>
+        Kadang, kita hanya perlu tempat<br>
+        <b>untuk menepi sejenak.</b></p>
+
+        <button onclick="goWA()">Saya ingin menepi</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    let index = 0;
+    const screens = document.querySelectorAll('.screen');
+
+    function next() {
+        screens[index].classList.remove('active');
+        index++;
+        if (index < screens.length) {
+            screens[index].classList.add('active');
+        }
+    }
+
+    function goWA() {
+        window.location.href = "https://wa.me/62XXXXXXXXXX?text=Halo,%20saya%20ingin%20menepi%20sejenak%20di%20Tembemburi%20Jawi.";
+    }
+</script>
+
+</body>
+</html>
